@@ -40,7 +40,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 " semshi - Python syntax highlight
-Plug 'numirias/semshi', {'do' : 'updateRemotePlugins'}
+"Plug 'numirias/semshi', {'do' : 'updateRemotePlugins'}
 
 " Tree-sitter highlighter for Python
 Plug 'nvim-treesitter/nvim-treesitter', {'do' : 'TSUpdate'}

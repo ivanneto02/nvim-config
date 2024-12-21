@@ -1,5 +1,11 @@
 # Quick Guide on How to Setup your Neovim
 
+### Install dependencies
+
+```
+sudo apt-get install python3.x-venv
+```
+
 ### Install Neovim 0.10+
 
 ```
@@ -22,5 +28,11 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 :PlugInstall
 ```
 
-### Verify all your plugins are installed 
+Note: You may need to run "R" because some plugins fail to install in the first try
 
+### Install language servers
+
+```
+:LSPInstall 
+
+```
