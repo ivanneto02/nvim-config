@@ -153,7 +153,6 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
@@ -443,7 +442,11 @@ require("lazy").setup({
 
 			-- Alternatively, using lua API
 			vim.keymap.set("n", "<leader>fb", function()
-				require("telescope").extensions.file_browser.file_browser()
+				require("telescope").extensions.file_browser.file_browser({
+					path = vim.fn.expand("%:p:h"),
+					cwd = vim.fn.expand("%:p:h"),
+					theme = "ivy",
+				})
 			end)
 
 			require("telescope").load_extension("file_browser")
@@ -955,6 +958,16 @@ require("lazy").setup({
 		--    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
 		--    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
 		--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+	},
+	{
+		"davidmh/mdx.nvim",
+		config = true,
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+	},
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
 	},
 
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
